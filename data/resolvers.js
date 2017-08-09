@@ -1,13 +1,13 @@
-import { Category, Todo } from './connectors';
+import { Todo } from './connectors';
 
 const resolvers = {
   Query: {
-    todos(_, args) {
+    todos() {
       return Todo.findAll();
     },
     todo(_, args) {
       return Todo.findById(args.id);
-    }
+    },
   },
   Category: {
     todos(category) {
